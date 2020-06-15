@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>To Do List</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="./js/bundle.js"></script>
+</head>
+<body>
+  <div id="app">
+
+    <h1>To Do List</h1>
+
+    <form v-on:submit.prevent="addToList">
+      <div class="form-item">
+      <label for="new-to-do">New Task:</label>
+      <input v-model="newToDo" type="text" id="new-to-do" required>
+      </div>
+
+      <div class="form-item">
+      <label for="form-item">Priority Level:</label>
+      <input type="radio" name="priority" value="high" id="highPriority" v-model="priority">
+      <label for="highPriority">High</label>
+      <input type="radio" name="priority" value="low" id="lowPriority" v-model="priority">
+      <label for="lowPriority">Low</label>
+      </div>
+
+      <div class="form-item">
+      <input class="btn" type="submit" value="Add to list">
+      </div>
+    </form>
+
+    <ul>
+      <h3>Still To Do</h3>
+      <li v-for="(item, index) in list" v-bind:class=" item.priority === 'low' ? 'low-priority' : 'high-priority'">
+        <span>{{item.name}}</span>
+        <button type="button" class="done-btn" v-on:click="taskCompleted(index)">✅</button>
+      </li>
+    </ul>
+
+    <ul>
+      <h3>Completed</h3>
+      <li class="completed" v-for="item in completed">
+        <span>{{item.name}}</span>
+      </li>
+
+    </ul>
+
+  </div>
+</body>
+</html>

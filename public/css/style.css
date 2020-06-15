@@ -1,0 +1,106 @@
+#app {
+  width: 70%;
+  margin: 0 auto;
+  background-color: FloralWhite;
+  padding: 0.4em 2em 2em 2em;
+  border-radius: 15px;
+  font-family: 'Courier New', sans-serif;
+}
+
+body {
+  background-color: SlateGray;
+}
+
+h1 {
+  text-align: center;
+  text-decoration: underline;
+}
+
+form {
+  margin-bottom: 30px;
+}
+
+.form-item {
+  display: flex;
+  padding: 5px;
+}
+
+label {
+  padding-right: 8px;
+}
+
+.btn {
+  padding: 6px;
+  border-radius: 4px;
+  background-color: SlateGray;
+  color: FloralWhite;
+}
+
+.btn:hover {
+  background-color: LightSlateGray;
+  color: FloralWhite;
+  cursor: pointer;
+}
+
+
+.done-btn {
+  /* border-radius: 6px;
+  border-width: 1px;
+  background-color: Chartreuse; */
+  font-size: 25px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background-color: FloralWhite;
+}
+
+.done-btn:focus {
+  outline: none;
+}
+
+.done-btn:hover {
+  cursor: pointer;
+  transform: rotateZ(-10deg);
+  /* background-color: Lime; */
+
+}
+
+button[type="button"] {
+  font-family: 'Courier New';
+  font-weight: bold;
+}
+
+input[type="submit"] {
+  font-family: 'Courier New';
+  font-weight: bold;
+}
+
+ul {
+  list-style: none;
+}
+
+li.high-priority:before {
+  content: "🔴";
+  position: absolute;
+}
+
+li.low-priority:before {
+  content: "🟡";
+  position: absolute;
+}
+
+li {
+  padding: 8px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+li.completed:before {
+  content: "✅";
+  position: absolute;
+}
+
+span {
+  margin-left: 30px;
+}
